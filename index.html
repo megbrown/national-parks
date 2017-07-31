@@ -2,8 +2,17 @@
 <html>
 <head>
 	<title>National Parks</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
+
+<body ng-app="ParksApp">
+
+	<div class="container">
+		<div ng-view></div>
+	</div>
+
 	<!-- third party -->
 	<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -13,6 +22,15 @@
 	<!-- app file -->
 	<script type="text/javascript" src="app/app.js"></script>
 	<!-- providers -->
+	<script type="text/javascript" src="app/values/fbCreds.js"></script>
+	<script type="text/javascript" src="app/factories/forestFactory.js"></script>
+	<script type="text/javascript" src="app/factories/userFactory.js"></script>
 	<!-- controllers -->
+	<script type="text/javascript" src="app/controllers/forestsFavesCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/forestsListCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/forestsSingleCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/loginCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/registerCtrl.js"></script>
+
 </body>
 </html>

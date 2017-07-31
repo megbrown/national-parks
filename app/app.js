@@ -1,7 +1,7 @@
 "use strict";
 
 let parksApp = angular.module("ParksApp", ["ngRoute"])
-.constant("FirebaseUrl", "");
+.constant("FirebaseUrl", "https://health-app-c4e3a.firebaseio.com/");
 
 parksApp.config( ($routeProvider) => {
 	$routeProvider
