@@ -28,6 +28,13 @@ parksApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
 		return currentUser;
 	};
 
+	let createUser = (userObj) => {
+		return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
+		.catch( (err) => {
+			console.log("error when creating user", err.message);
+		});
+	};
+
 	let loginUser = (userObj) => {
 		return $q( (resolve, reject) => {
 			firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
@@ -41,6 +48,6 @@ parksApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBCreds) {
 		});
 	};
 
-	return { isAuthenticated, getUser, loginUser };
+	return { isAuthenticated, getUser, createUser, loginUser };
 
 });
