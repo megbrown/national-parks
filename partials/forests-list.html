@@ -2,12 +2,6 @@
 
 <div ng-repeat="data in forests">
 	<div>
-		<h3>{{data.name}}</h3>
-	</div>
-	<div>
-		<p>{{data.description}}</p>
-	</div>
-	<div>
-		<p><a href="#!/{{data.id}}">Add to faves</a></p>
+		<h3><a ng-href="#!/{{data.id}}">{{data.name}}</a></h3>
 	</div>
 </div>

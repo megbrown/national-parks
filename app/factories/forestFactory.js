@@ -15,6 +15,18 @@ parksApp.factory("ForestFactory", function($q, $http, FirebaseUrl) {
 		});
 	};
 
-	return { getAllForests };
+	let getSingleForest = (forestId) => {
+		return $q( (resolve, reject) => {
+			$http.get(`${FirebaseUrl}forests?orderBy="forest_id"$equalTo="${forestId}"`)
+			.then( (forests) => {
+				resolve(forests);
+			})
+			.catch( (err) => {
+				reject(err);
+			});
+		});
+	};
+
+	return { getAllForests, getSingleForest };
 
 });
